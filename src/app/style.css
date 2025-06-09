@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-main: hsl(32, 96%, 48%);
+	--color-dark: hsl(0, 0%, 10%);
+	--color-secondDark: hsl(240, 3%, 8%);
+	--font-logo: "Oswald";
+}
+@utility container {
+	margin-inline: auto;
+}
+
+:root {
+	font-family: "Inter", ui-sans-serif;
+
+	--background: var(--color-dark);
+	--foreground: oklch(0.98 0.05 30);
+
+	--primary: var(--color-main);
+	--primary-foreground: oklch(0.98 0.05 30);
+
+	--secondary: hsl(32, 40%, 40%);
+	--secondary-foreground: oklch(0.98 0.05 30);
+
+	--muted: oklch(0.3 0.02 200);
+	--muted-foreground: oklch(0.98 0.05 30);
+
+	--accent: hsl(240, 3%, 18%);
+	--accent-foreground: oklch(0.98 0.05 30);
+
+	--popover: var(--color-dark);
+	--popover-foreground: oklch(0.98 0.05 30);
+
+	--border: oklch(0.35 0.02 240);
+	--input: oklch(0.35 0.02 240);
+
+	--card: var(--color-dark);
+	--card-foreground: oklch(0.98 0 0);
+
+	--ring: var(--color-main);
+
+	--border: oklch(0.4 0.02 240 / 30%);
+	--radius: 0.5rem;
+}
+
+@theme inline {
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-secondDark text-foreground;
+		margin: 0;
+		min-width: 320px;
+		min-height: 100vh;
+	}
+}
+
+.embla__container {
+	display: flex;
+}
+.embla__slide {
+	flex: 0 0 100%;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-in {
+	animation: fade-in 0.2s ease-out forwards;
+}
+
+.scrollbar-custom {
+	scrollbar-width: thin;
+	scrollbar-color: #4b5563 transparent;
+}
+.scrollbar-custom::-webkit-scrollbar {
+	width: 6px;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+	background-color: #4b5563;
+	border-radius: 8px;
+}
+.scrollbar-custom::-webkit-scrollbar-track {
+	background: transparent;
+}
+.scrollbar-custom:hover::-webkit-scrollbar-thumb {
+	background-color: #71717a;
+}
